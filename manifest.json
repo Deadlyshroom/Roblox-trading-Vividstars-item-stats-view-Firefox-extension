@@ -1,0 +1,60 @@
+{
+  "manifest_version": 3,
+  "name": "Vividstar's Trading Extension",
+  "version": "1.0.4",
+  "description": "Shows, Rolimon's item values directly on Roblox trade pages, with customizable colors, RoUtility styling, auto trade ads and trade notifications.",
+  "icons": {
+    "128": "icon.png"
+  },
+  "action": {
+    "default_title": "Quick settings",
+    "default_icon": {
+      "128": "icon.png"
+    },
+    "default_popup": "popup.html"
+  },
+  "host_permissions": [
+    "https://www.roblox.com/*",
+    "https://api.rolimons.com/*",
+    "https://www.rolimons.com/*",
+    "https://trades.roblox.com/*",
+    "https://routility.io/*",
+    "https://users.roblox.com/*",
+    "https://inventory.roblox.com/*"
+  ],
+  "permissions": [
+    "storage",
+    "notifications",
+    "alarms"
+  ],
+  "options_ui": {
+    "page": "options.html",
+    "open_in_tab": true
+  },
+  "background": {
+    "scripts": [
+      "background.js"
+    ]
+  },
+  "content_scripts": [
+    {
+      "matches": [
+        "https://www.roblox.com/*"
+      ],
+      "js": [
+        "content.js"
+      ],
+      "run_at": "document_idle"
+    }
+  ],
+  "browser_specific_settings": {
+    "gecko": {
+      "id": "rolimons-set-value-overlay2@example.com",
+      "data_collection_permissions": {
+        "required": [
+          "websiteActivity"
+        ]
+      }
+    }
+  }
+}
