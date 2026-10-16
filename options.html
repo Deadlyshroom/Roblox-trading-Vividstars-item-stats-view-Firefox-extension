@@ -1,0 +1,208 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Vividstar's Trading Extension — Settings</title>
+  <link rel="stylesheet" href="options.css">
+</head>
+<body>
+  <main class="page">
+    <header>
+      <h1>Vividstar's Trading Extension</h1>
+      <p>Pick a category below. Everything saves automatically.</p>
+    </header>
+    <nav class="tabnav" role="tablist" aria-label="Settings categories">
+      <button type="button" role="tab" class="navtab" data-tab="appearance"><span class="ico" aria-hidden="true">🎨</span>Appearance</button>
+      <button type="button" role="tab" class="navtab" data-tab="features"><span class="ico" aria-hidden="true">⚙️</span>Features</button>
+      <button type="button" role="tab" class="navtab" data-tab="routility"><span class="ico" aria-hidden="true">💲</span>RoUtility</button>
+      <button type="button" role="tab" class="navtab" data-tab="ads"><span class="ico" aria-hidden="true">📣</span>Trade ads</button>
+      <button type="button" role="tab" class="navtab" data-tab="notifications"><span class="ico" aria-hidden="true">🔔</span>Notifications</button>
+    </nav>
+
+    <div class="panel" data-panel="appearance">
+      <section class="card preview-card sticky">
+        <h2>Live preview</h2>
+        <div id="preview" class="preview">
+          <div class="preview-item"><span>VALUE</span><strong id="previewValue">125,000</strong></div>
+          <div class="preview-total"><span>Rolimon's Value · 4 items</span><strong id="previewTotal">486,500</strong></div>
+        </div>
+        <p class="note">Changes save automatically and show on Roblox trade pages.</p>
+      </section>
+      <section class="card">
+        <h2>Item value badges</h2>
+        <p class="note nm">The small value shown under each item.</p>
+      <div class="setting"><label for="valueText">Text color</label><input id="valueText" type="color"></div>
+      <div class="setting"><label for="valueBackground">Background color</label><input id="valueBackground" type="color"></div>
+      <div class="setting"><label for="valueBorder">Border color</label><input id="valueBorder" type="color"></div>
+      </section>
+      <section class="card">
+        <h2>Trade totals</h2>
+        <p class="note nm">The total bar for each side of a trade.</p>
+      <div class="setting"><label for="totalText">Text color</label><input id="totalText" type="color"></div>
+      <div class="setting"><label for="totalBackground">Background color</label><input id="totalBackground" type="color"></div>
+      <div class="setting"><label for="totalBorder">Border color</label><input id="totalBorder" type="color"></div>
+      </section>
+    </div>
+    <div class="panel" data-panel="features" hidden>
+      <section class="card">
+        <h2>On trade pages</h2>
+      <div class="setting">
+        <div class="lbl"><label for="tradeWinLossEnabled">Win / Loss indicator</label><p class="desc">Shows green for a winning trade and red for a losing one.</p></div>
+        <label class="switch sm"><input id="tradeWinLossEnabled" type="checkbox"><span class="track"></span></label>
+      </div>
+      </section>
+      <section class="card">
+        <h2>Extras</h2>
+      <div class="setting">
+        <div class="lbl"><label for="profileValuesEnabled">Values on profiles &amp; inventories</label><p class="desc">Show item values and the Stats button on user profiles and inventories, not just trades.</p></div>
+        <label class="switch sm"><input id="profileValuesEnabled" type="checkbox"><span class="track"></span></label>
+      </div>
+      <div class="setting">
+        <div class="lbl"><label for="graphButtonEnabled">Graph button</label><p class="desc">Adds a button on items that opens Rolimon's RAP and price history.</p></div>
+        <label class="switch sm"><input id="graphButtonEnabled" type="checkbox"><span class="track"></span></label>
+      </div>
+      </section>
+    </div>
+    <div class="panel" data-panel="routility" hidden>
+      <section class="card">
+        <h2>Show RoUtility</h2>
+      <div class="setting">
+        <div class="lbl"><label for="routilityEnabled">USD value on items</label><p class="desc">Show RoUtility's USD value next to item values.</p></div>
+        <label class="switch sm"><input id="routilityEnabled" type="checkbox"><span class="track"></span></label>
+      </div>
+      <div class="setting">
+        <div class="lbl"><label for="routilityStatsEnabled">RoUtility stats in Stats popup</label><p class="desc">Adds USD, RAP, Copies, Demand and Trend to the Stats popup.</p></div>
+        <label class="switch sm"><input id="routilityStatsEnabled" type="checkbox"><span class="track"></span></label>
+      </div>
+      </section>
+    <section class="card">
+      <h2>Look &amp; format</h2>
+      <div id="ruPreview" class="preview-total ru-preview" aria-label="Preview"><span id="ruPreviewLabel">USD</span><strong id="ruPreviewNumber">$12.50</strong></div>
+      <div class="note" style="margin:6px 0 4px">Live preview. The symbol only changes how the number is shown; RoUtility's value is always USD.</div>
+      <div class="setting"><label for="ruLabel">Label text</label><input id="ruLabel" type="text" maxlength="8" class="text-input" placeholder="USD"></div>
+      <div class="setting"><label for="ruShowLabel">Show the label</label><label class="switch sm"><input id="ruShowLabel" type="checkbox"><span class="track"></span></label></div>
+      <div class="setting">
+        <label for="ruCurrency">Currency symbol</label>
+        <select id="ruCurrency" class="text-input">
+          <option value="$">$ (dollar)</option>
+          <option value="€">€ (euro)</option>
+          <option value="£">£ (pound)</option>
+          <option value="none">None</option>
+        </select>
+      </div>
+      <div class="setting">
+        <label for="ruDecimals">Decimal places</label>
+        <select id="ruDecimals" class="text-input">
+          <option value="0">0 (e.g. $12)</option>
+          <option value="1">1 (e.g. $12.5)</option>
+          <option value="2">2 (e.g. $12.50)</option>
+        </select>
+      </div>
+      <div class="setting"><label for="ruText">Text color</label><input id="ruText" type="color"></div>
+      <div class="setting"><label for="ruBackground">Background color</label><input id="ruBackground" type="color"></div>
+      <div class="setting"><label for="ruBorder">Border color</label><input id="ruBorder" type="color"></div>
+    </section>
+    </div>
+    <div class="panel" data-panel="ads" hidden>
+    <section class="card ad-card" id="tradeAds">
+      <div class="ad-top">
+        <div>
+          <h2>Auto trade ads</h2>
+          <p class="note nm">Posts a Rolimon's trade ad for you. Log in to Rolimon's in this browser first. Rolimon's allows one ad every 15 minutes.</p>
+        </div>
+        <label class="switch" title="Turn auto-posting on or off">
+          <input id="adEnabled" type="checkbox"><span class="track"></span>
+          <span class="switch-text" id="adEnabledText">Off</span>
+        </label>
+      </div>
+
+      <div id="adChecklist" class="checklist" aria-live="polite"></div>
+
+      <div class="trade-grid">
+        <div class="side" id="offerSide">
+          <div class="side-head"><span class="side-title offer">Your offer</span><span class="count" id="offerCount">0/4</span></div>
+          <div id="offerSlots" class="slots"></div>
+          <div class="side-total">Total <strong id="offerTotal">0</strong></div>
+          <div class="tabs" role="tablist">
+            <button type="button" class="tab on" id="tabInv" role="tab">My inventory</button>
+            <button type="button" class="tab" id="tabSearch" role="tab">Search all items</button>
+          </div>
+          <div id="invPanel" class="inv-panel">
+            <input id="invFilter" type="search" class="text-input wide" placeholder="Filter your items…" autocomplete="off">
+            <div id="invStatus" class="note"></div>
+            <div id="invGrid" class="inv-grid"></div>
+          </div>
+          <div id="offerSearchPanel" hidden>
+            <input id="offerSearch" type="search" class="text-input wide" placeholder="Search any item by name or acronym…" autocomplete="off">
+            <div id="offerResults" class="results"></div>
+          </div>
+        </div>
+
+        <div class="swap" aria-hidden="true">⇄</div>
+
+        <div class="side" id="requestSide">
+          <div class="side-head"><span class="side-title request">Requesting</span><span class="count" id="requestCount">0/4</span></div>
+          <div id="requestSlots" class="slots"></div>
+          <div class="side-total">Total <strong id="requestTotal">0</strong></div>
+          <input id="requestSearch" type="search" class="text-input wide" placeholder="Search an item to request…" autocomplete="off">
+          <div id="requestResults" class="results"></div>
+          <div class="tag-head"><strong>Or request tags</strong><span class="count" id="tagCount">0/4</span></div>
+          <div id="tagBox" class="tags"></div>
+        </div>
+      </div>
+
+      <div class="ad-block">
+        <div class="ad-head"><strong>Ad preview</strong><span id="diffBadge" class="badge"></span></div>
+        <div id="adPreview" class="ad-preview"></div>
+      </div>
+
+      <div class="ad-block">
+        <div class="ad-head"><strong>Schedule</strong></div>
+        <div class="presets" id="intervalPresets"></div>
+        <div class="setting"><label for="adInterval">Custom interval (minutes, 15–1440)</label><input id="adInterval" type="number" min="15" max="1440" class="text-input num"></div>
+        <details class="adv">
+          <summary>Advanced</summary>
+          <div class="setting"><label for="adPlayerId">Roblox user ID <span class="note inline">(blank = detect automatically)</span></label><input id="adPlayerId" type="text" inputmode="numeric" class="text-input" placeholder="auto"></div>
+        </details>
+      </div>
+
+      <div class="actions">
+        <button id="adPostNow" type="button" class="primary">Post ad now</button>
+        <button id="adClear" type="button" class="secondary">Clear ad</button>
+        <span id="adStatus" class="ad-status" role="status"></span>
+      </div>
+    </section>
+    </div>
+    <div class="panel" data-panel="notifications" hidden>
+    <section class="card">
+      <h2>Notify me about</h2>
+      <div class="setting">
+        <div class="lbl"><label for="inboundEnabled">Inbound trades</label><p class="desc">When someone sends you a trade.</p></div>
+        <label class="switch sm"><input id="inboundEnabled" type="checkbox"><span class="track"></span></label>
+      </div>
+      <div class="setting">
+        <div class="lbl"><label for="declinedEnabled">Declined trades</label><p class="desc">When someone declines your trade.</p></div>
+        <label class="switch sm"><input id="declinedEnabled" type="checkbox"><span class="track"></span></label>
+      </div>
+      <div class="setting">
+        <div class="lbl"><label for="completedEnabled">Completed trades</label><p class="desc">When a trade goes through.</p></div>
+        <label class="switch sm"><input id="completedEnabled" type="checkbox"><span class="track"></span></label>
+      </div>
+      <div class="setting">
+        <div class="lbl"><label for="inboundSound">Sound</label><p class="desc">Play a sound with notifications.</p></div>
+        <label class="switch sm"><input id="inboundSound" type="checkbox"><span class="track"></span></label>
+      </div>
+    </section>
+    </div>
+
+    <div class="actions footer">
+      <button id="reset" type="button" class="secondary">Reset colors &amp; RoUtility format</button>
+      <span id="saved" role="status">Saved automatically</span>
+    </div>
+  </main>
+  <script src="options.js"></script>
+  <script src="tradead.js"></script>
+  <script src="tabs.js"></script>
+</body>
+</html>
