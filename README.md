@@ -1,6 +1,6 @@
 couldn't find a fully trusted firefox extension with these features for roblox trading, so i decided to make it. and it's entirely free no fees no review requirement. everything added will be free
 
-
+Download the extension here https://addons.mozilla.org/en-US/firefox/addon/vividstar-s-trading-extension/
 
 ## Preview
 
